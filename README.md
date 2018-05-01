@@ -119,6 +119,5 @@ Time Elapsed: 00:04:40
 
 The final test result on MNIST dataset:
 
-Train Accuracy: 0.985922619048
-
-Test Accuracy: 0.968333333333
+* Train Accuracy: 0.985922619048
+* Test Accuracy: 0.968333333333
