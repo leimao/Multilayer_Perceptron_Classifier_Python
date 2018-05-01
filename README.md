@@ -113,3 +113,8 @@ Time Elapsed: 00:04:40
 <p align="center">
     <img src = "./training_curve.png" width="80%">
 </p>
+
+The final test result on MNIST dataset:
+
+Train Accuracy: 0.985922619048
+Test Accuracy: 0.968333333333
