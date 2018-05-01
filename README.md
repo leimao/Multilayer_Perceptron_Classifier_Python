@@ -26,6 +26,7 @@ In addition to the MLP classifier class, a gradient checking module for the MLP 
 │   ├── test.csv
 │   └── train.csv
 ├── LICENSE.md
+├── main.py
 ├── README.md
 └── utils.py
 ```
@@ -65,13 +66,18 @@ To test the homebrew MLP classifier on MNIST, simply run the following command i
 $ python main
 ```
 
+<p align="center">
+    <img src = "./training_curve.png" width="80%">
+</p>
+
+
 The gradient descent algorithm was verified by gradient checking using Iris dataset.
 
 ```
 Gradient checking using Iris dataset
 Averaged Absolute Difference between Gradient Descent and Numerical Gradient Approximate: 7.17957663753e-12
 Averaged Absolute Value of Gradient Calculated by Gradient Descent: 0.00559096026496
-Difference ratio: 1.28414016507e-09
+Difference Ratio: 1.28414016507e-09
 Gradient Checking Passed.
 
 Train MNIST dataset using ANN
@@ -110,11 +116,9 @@ Test Accuracy: 0.968333333333
 Time Elapsed: 00:04:40
 ```
 
-<p align="center">
-    <img src = "./training_curve.png" width="80%">
-</p>
 
 The final test result on MNIST dataset:
 
 Train Accuracy: 0.985922619048
+
 Test Accuracy: 0.968333333333
