@@ -371,31 +371,3 @@ class ANN(object):
 
         return {'weights': self.weights, 'biases': self.biases}
 
-
-def iris_gradient_test():
-
-    # Gradient checking using Iris dataset
-
-    print("Gradient checking using Iris dataset")
-
-    iris = datasets.load_iris()
-
-    X = iris.data
-    y = iris.target
-    X, y = shuffle(X, y, random_state = 0)
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
-    y_train = y_train.reshape((-1,1))
-    y_test = y_test.reshape((-1,1))
-
-    nn = ANN(h = 2, s = 64)
-    abs_diff_ave, abs_grad_ave = nn.gradient_check(X_train, y_train, epsilon = 1e-5)
-
-    print("Averaged Absolute Difference between Gradient Descent and Numerical Gradient Approximate: %s" % str(abs_diff_ave))
-    print("Averaged Absolute Value of Gradient Calculated by Gradient Descent: %s" % str(abs_grad_ave))
-    print("Difference ratio: %s" % str(abs_diff_ave / abs_grad_ave))
-
-    if abs_diff_ave / abs_grad_ave < 1e-4:
-        print("Gradient Checking Passed.")
-    else:
-        print("Gradient Checking Failed!")

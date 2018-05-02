@@ -6,7 +6,7 @@ University of Chicago
 
 ## Introduction
 
-This is an implementation of multilayer perceptron (MLP) classifier from scratch in Python. Unlike many MLP classifier code available on GitHub (for example, Michael Nielsen's popular [code](https://github.com/mnielsen/neural-networks-and-deep-learning/blob/master/src/network.py)), it vectorizes everything and calculate the batch using matrix calculations (Michael Nielsen's popular code only calculate the gradient for single data point and add these gradients together, which is not ideal reagrding to the calculation efficiency). In addition, it uses conventional ``[num_data, num_feature]`` shaped data as input, and there is no internal transpose of the input matrix. 
+This is an implementation of multilayer perceptron (MLP) classifier from scratch in Python. Unlike many MLP classifier code available on GitHub (for example, Michael Nielsen's popular [code](https://github.com/mnielsen/neural-networks-and-deep-learning/blob/master/src/network.py)), it vectorizes everything and calculate the gradient for mini-batch using matrix calculations (Michael Nielsen's popular code only calculate the gradient for single data point and add these gradients together, which is not ideal reagrding to the calculation efficiency). In addition, it uses conventional ``[num_data, num_feature]`` shaped data as input, and there is no internal transpose of the input matrix. 
 
 In addition to the MLP classifier class, a gradient checking module for the MLP classifier class, and a homebrew OneHotEncoder were also implemented.
 
@@ -16,6 +16,7 @@ In addition to the MLP classifier class, a gradient checking module for the MLP 
 * Numpy 1.14
 * Pandas 0.22 (for demo purpose)
 * Scikit-Learn 0.19.1 (for demo purpose)
+* Matplotlib 2.1.1 (for demo purpose)
 
 ## Files
 
@@ -35,14 +36,14 @@ In addition to the MLP classifier class, a gradient checking module for the MLP 
 
 ### MLP Classifier
 
-* Residual Sum of Squres Loss
-* Xavier Initializer
-* Single-Batch (One Data Point) Gradient Descent
-* Hidden Layer Size Fixed
+* Residual sum of squre Loss
+* Xavier initializer
+* Single-batch (one data point) gradient descent
+* Fixed hidden layer size
 
 ### Modification
 
-This MLP class was designed for adapting different sizes for hidden layers, different loss functions, and different minibatch sizes, these new features could be created with simple modifications to the code (no big change).
+This MLP class was designed for adapting different sizes for hidden layers, different loss functions, and different minibatch sizes, these new features could be created with simple modifications to the code.
 
 ## Usage
 
@@ -63,7 +64,7 @@ test_predictions = model.predict_label(X = X_test)
 To test the homebrew MLP classifier on MNIST, simply run the following command in the shell:
 
 ```bash
-$ python main
+$ python main.py
 ```
 
 <p align="center">
